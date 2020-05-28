@@ -94,7 +94,6 @@
             this.searchBox.TabIndex = 4;
             this.searchBox.TabStop = false;
             this.searchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
-            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
             // 
             // createNote
             // 
@@ -103,7 +102,7 @@
             this.createNote.Enabled = false;
             this.createNote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.createNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.createNote.Location = new System.Drawing.Point(552, 510);
+            this.createNote.Location = new System.Drawing.Point(552, 501);
             this.createNote.Margin = new System.Windows.Forms.Padding(2);
             this.createNote.Name = "createNote";
             this.createNote.Size = new System.Drawing.Size(98, 22);
@@ -337,12 +336,12 @@
             this.EditButton.BackColor = System.Drawing.SystemColors.Control;
             this.EditButton.Enabled = false;
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.EditButton.Location = new System.Drawing.Point(205, 225);
+            this.EditButton.Location = new System.Drawing.Point(211, 225);
             this.EditButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(72, 20);
+            this.EditButton.Size = new System.Drawing.Size(66, 20);
             this.EditButton.TabIndex = 14;
-            this.EditButton.Text = "Сохранить";
+            this.EditButton.Text = "Изменить";
             this.EditButton.UseVisualStyleBackColor = false;
             this.EditButton.Visible = false;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
@@ -459,7 +458,6 @@
             // 
             this.NumToDelTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.NumToDelTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NumToDelTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NumToDelTextBox.Name = "NumToDelTextBox";
             this.NumToDelTextBox.Size = new System.Drawing.Size(30, 16);
             this.NumToDelTextBox.Text = "0";
@@ -545,11 +543,11 @@
             this.patientsTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.patientsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.patientsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.patientsTextBox.Location = new System.Drawing.Point(12, 28);
+            this.patientsTextBox.Location = new System.Drawing.Point(12, 35);
             this.patientsTextBox.Name = "patientsTextBox";
             this.patientsTextBox.ReadOnly = true;
             this.patientsTextBox.ShortcutsEnabled = false;
-            this.patientsTextBox.Size = new System.Drawing.Size(638, 504);
+            this.patientsTextBox.Size = new System.Drawing.Size(638, 488);
             this.patientsTextBox.TabIndex = 15;
             this.patientsTextBox.TabStop = false;
             this.patientsTextBox.Text = "";
@@ -558,10 +556,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(491, 6);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(488, 4);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 13);
+            this.label9.Size = new System.Drawing.Size(42, 15);
             this.label9.TabIndex = 14;
             this.label9.Text = "Поиск";
             // 
@@ -578,11 +577,13 @@
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.patientsTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CourseTask";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.CourseTask_HelpRequested);
             this.formBox.ResumeLayout(false);
             this.formBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumToEditUpDown)).EndInit();

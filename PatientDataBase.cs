@@ -88,7 +88,7 @@ namespace CsCourseTask
             return inf;
         }
 
-        public void DeleteNonDebtors()
+        public void RemoveNonDebtors()
         {
             for (int i = 0; i < patients.Count; i++)
             {

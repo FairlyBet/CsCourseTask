@@ -160,21 +160,29 @@ namespace CsCourseTask
         {
             string path = openFileDialog1.FileName;
             incomingPass = PassBox.Text;
-            if (PatientDataBase.ReadPass(path) == incomingPass)
+            try
             {
-                if (dataBase == null)
-                    dataBase = new PatientDataBase();
-                dataBase.Load(path);
-                PassCheckGroupBox.Visible = false;
-                PassCheckGroupBox.Enabled = false;
-                PassBox.Text = "";
-                patientsTextBox.Text = dataBase.ToString();
-                FIleStripMenu.Enabled = true;
-                EditToolStripMenuItem.Enabled = true;
-                searchBox.Enabled = true;
-                createNote.Enabled = true;
+                if (PatientDataBase.ReadPass(path) == incomingPass)
+                {
+                    if (dataBase == null)
+                        dataBase = new PatientDataBase();
+                    dataBase.Load(path);
+
+                    PassCheckGroupBox.Visible = false;
+                    PassCheckGroupBox.Enabled = false;
+                    PassBox.Text = "";
+                    patientsTextBox.Text = dataBase.ToString();
+                    FIleStripMenu.Enabled = true;
+                    EditToolStripMenuItem.Enabled = true;
+                    searchBox.Enabled = true;
+                    createNote.Enabled = true;
+                }
+                else MessageBox.Show("Пароль введен неверно!", "");
             }
-            else MessageBox.Show("Пароль введен неверно!", "");
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message); 
+            }
         }
 
         private void SavePass_Click(object sender, EventArgs e)
@@ -259,7 +267,7 @@ namespace CsCourseTask
 
         private void RemoveNonDebtorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataBase.DeleteNonDebtors();
+            dataBase.RemoveNonDebtors();
             patientsTextBox.Text = dataBase.ToString();
             MessageBox.Show("Записи не имеющие задолженностей были удалены");
         }
@@ -371,9 +379,10 @@ namespace CsCourseTask
             NumToDelTextBox.Text = "0";
         }
 
-        //private void searchBox_Leave(object sender, EventArgs e)
-        //{
-        //    searchBox.Text = "";
-        //}
+        private void CourseTask_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            HelpForm helpForm = new HelpForm();
+            helpForm.Show();
+        }
     }
 }
