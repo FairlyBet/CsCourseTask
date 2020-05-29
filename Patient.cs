@@ -9,11 +9,11 @@ namespace CsCourseTask
         String workType;
         String recordCardNumber;
         UInt32 serviceCost;
-        UInt32 debtAmount = 0;
+        UInt32 debtAmount;
         Boolean isPayed; 
         public string Fullname { get => fullname; }
         public bool IsPayed { get => isPayed; }
-        public uint DebtAmount { get => debtAmount; set => debtAmount = value; }
+        public uint DebtAmount { get => debtAmount; }
         public string WorkType { get => workType; }
         public string RecordCardNumber { get => recordCardNumber; }
         public uint ServiceCost { get => serviceCost; }
@@ -38,7 +38,6 @@ namespace CsCourseTask
             binaryWriter.Write(workType);
             binaryWriter.Write(recordCardNumber);
             binaryWriter.Write(serviceCost);
-          //  binaryWriter.Write(debtAmount);
             binaryWriter.Write(isPayed);
         }
 
@@ -48,7 +47,6 @@ namespace CsCourseTask
             workType = binaryReader.ReadString();
             recordCardNumber = binaryReader.ReadString();
             serviceCost = binaryReader.ReadUInt32();
-           // debtAmount = binaryReader.ReadUInt32();
             isPayed = binaryReader.ReadBoolean();
             if (isPayed == false)
                 debtAmount = serviceCost;

@@ -6,16 +6,20 @@ namespace CsCourseTask
 {
     class PatientDataBase
     {
-        List<Patient> patients = new List<Patient>() { };
+        List<Patient> patients;
         String password;
 
         public List<Patient> Patients { get => patients; }
 
-        public PatientDataBase() { }
+        public PatientDataBase() 
+        {
+            patients = new List<Patient>();
+        }
 
         public PatientDataBase(String incomingPass)
         {
             password = incomingPass;
+            patients = new List<Patient>();
         }
 
         public Boolean AddElement(String fullname, String workType, String recordCardNumber,
@@ -26,9 +30,10 @@ namespace CsCourseTask
                 if (numToEdit == -1)
                     patients.Add(new Patient(fullname, workType, recordCardNumber,
                     serviceCost, isPayed));
-                else
-                    patients[numToEdit] = new Patient(fullname, workType, recordCardNumber, 
-                        serviceCost, isPayed);  
+                else if (numToEdit < patients.Count && numToEdit >= 0)
+                    patients[numToEdit] = new Patient(fullname, workType, recordCardNumber,
+                        serviceCost, isPayed);
+                else return false;
 
                 return true;
             }

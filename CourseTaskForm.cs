@@ -6,7 +6,6 @@ namespace CsCourseTask
     public partial class CourseTask : Form
     {
         PatientDataBase dataBase;
-        String incomingPass = "";
 
         public CourseTask()
         {
@@ -113,7 +112,6 @@ namespace CsCourseTask
                     formBox.Enabled = false;
 
                     patientsTextBox.Text = dataBase.ToString();
-                    //patientsTextBox.Text += dataBase.Patients[dataBase.Patients.Count - 1];
 
                     fullNameTextBox.Text = "";
                     workTypeTextBox.Text = "";
@@ -159,10 +157,9 @@ namespace CsCourseTask
         private void AcceptButton_Click(object sender, EventArgs e)
         {
             string path = openFileDialog1.FileName;
-            incomingPass = PassBox.Text;
             try
             {
-                if (PatientDataBase.ReadPass(path) == incomingPass)
+                if (PatientDataBase.ReadPass(path) == PassBox.Text)
                 {
                     if (dataBase == null)
                         dataBase = new PatientDataBase();
