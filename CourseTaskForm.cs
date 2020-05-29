@@ -250,7 +250,7 @@ namespace CsCourseTask
             {
                 if (Int32.Parse(NumToDelTextBox.Text) > 0 && Int32.Parse(NumToDelTextBox.Text) <= dataBase.Patients.Count)
                 {
-                    dataBase.DeleteElement(Int32.Parse(NumToDelTextBox.Text));
+                    dataBase.DeleteElement(Int32.Parse(NumToDelTextBox.Text) - 1);
                     MessageBox.Show("Запись удалена");
                     patientsTextBox.Text = dataBase.ToString();
                 }

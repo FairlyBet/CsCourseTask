@@ -360,14 +360,14 @@
             // CreateStripMenuItem
             // 
             this.CreateStripMenuItem.Name = "CreateStripMenuItem";
-            this.CreateStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CreateStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.CreateStripMenuItem.Text = "Создать";
             this.CreateStripMenuItem.Click += new System.EventHandler(this.CreateStripMenuItem_Click);
             // 
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.OpenToolStripMenuItem.Text = "Открыть";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
@@ -377,7 +377,7 @@
             this.SaveToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.SaveToolStripMenuItem.ImageTransparentColor = System.Drawing.SystemColors.Control;
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.SaveToolStripMenuItem.Text = "Сохранить";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
@@ -458,6 +458,7 @@
             // 
             this.NumToDelTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.NumToDelTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NumToDelTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NumToDelTextBox.Name = "NumToDelTextBox";
             this.NumToDelTextBox.Size = new System.Drawing.Size(30, 16);
             this.NumToDelTextBox.Text = "0";

@@ -42,7 +42,7 @@ namespace CsCourseTask
 
         public void DeleteElement(Int32 number)
         {
-            patients.RemoveAt(number - 1);
+            patients.RemoveAt(number);
         }
 
         public string Search(String name)
