@@ -253,6 +253,7 @@ namespace CsCourseTask
                     dataBase.DeleteElement(Int32.Parse(NumToDelTextBox.Text) - 1);
                     MessageBox.Show("Запись удалена");
                     patientsTextBox.Text = dataBase.ToString();
+                    NumToDelTextBox.Text = "0";
                 }
                 else MessageBox.Show("Неверный номер");
             }

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace CsCourseTask
 {
-    class Patient
+    struct Patient
     {
         String fullname;
         String workType;
@@ -18,8 +18,6 @@ namespace CsCourseTask
         public string RecordCardNumber { get => recordCardNumber; }
         public uint ServiceCost { get => serviceCost; }
 
-        public Patient() { }
-
         public Patient(String fullname, String workType, String recordCardNumber,
             UInt32 serviceCost, Boolean isPayed)
         {
@@ -29,6 +27,7 @@ namespace CsCourseTask
             this.serviceCost = serviceCost;
             if (!isPayed)
                 this.debtAmount = serviceCost;
+            else this.debtAmount = 0;
             this.isPayed = isPayed;
         }
 

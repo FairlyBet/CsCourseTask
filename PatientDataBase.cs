@@ -123,10 +123,10 @@ namespace CsCourseTask
             FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
             BinaryReader binaryReader = new BinaryReader(fileStream);
             patients.Clear();
-            password = binaryReader.ReadString(); 
+            password = binaryReader.ReadString();
+            Patient patient = new Patient();
             while (fileStream.Position < fileStream.Length)
             {
-                Patient patient = new Patient();
                 patient.Load(binaryReader);
                 patients.Add(patient);
             }
