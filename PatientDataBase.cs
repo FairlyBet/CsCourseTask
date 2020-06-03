@@ -40,10 +40,10 @@ namespace CsCourseTask
             else return false;
         }
 
-        public void DeleteElement(Int32 number)
-        {
-            patients.RemoveAt(number);
-        }
+        //public void DeleteElement(Int32 number)
+        //{
+        //    patients.RemoveAt(number);
+        //}
 
         public string Search(String name)
         {
@@ -124,9 +124,9 @@ namespace CsCourseTask
             BinaryReader binaryReader = new BinaryReader(fileStream);
             patients.Clear();
             password = binaryReader.ReadString();
-            Patient patient = new Patient();
             while (fileStream.Position < fileStream.Length)
             {
+                Patient patient = new Patient();
                 patient.Load(binaryReader);
                 patients.Add(patient);
             }

@@ -164,7 +164,6 @@ namespace CsCourseTask
                     if (dataBase == null)
                         dataBase = new PatientDataBase();
                     dataBase.Load(path);
-
                     PassCheckGroupBox.Visible = false;
                     PassCheckGroupBox.Enabled = false;
                     PassBox.Text = "";
@@ -250,7 +249,8 @@ namespace CsCourseTask
             {
                 if (Int32.Parse(NumToDelTextBox.Text) > 0 && Int32.Parse(NumToDelTextBox.Text) <= dataBase.Patients.Count)
                 {
-                    dataBase.DeleteElement(Int32.Parse(NumToDelTextBox.Text) - 1);
+                    //dataBase.DeleteElement(Int32.Parse(NumToDelTextBox.Text) - 1);
+                    dataBase.Patients.RemoveAt(Int32.Parse(NumToDelTextBox.Text) - 1);
                     MessageBox.Show("Запись удалена");
                     patientsTextBox.Text = dataBase.ToString();
                     NumToDelTextBox.Text = "0";
