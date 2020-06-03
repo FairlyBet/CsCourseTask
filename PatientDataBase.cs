@@ -11,7 +11,7 @@ namespace CsCourseTask
 
         public List<Patient> Patients { get => patients; }
 
-        public PatientDataBase() 
+        public PatientDataBase()
         {
             patients = new List<Patient>();
         }
@@ -124,9 +124,9 @@ namespace CsCourseTask
             BinaryReader binaryReader = new BinaryReader(fileStream);
             patients.Clear();
             password = binaryReader.ReadString();
+            Patient patient = new Patient();
             while (fileStream.Position < fileStream.Length)
             {
-                Patient patient = new Patient();
                 patient.Load(binaryReader);
                 patients.Add(patient);
             }

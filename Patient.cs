@@ -49,6 +49,7 @@ namespace CsCourseTask
             isPayed = binaryReader.ReadBoolean();
             if (isPayed == false)
                 debtAmount = serviceCost;
+            else debtAmount = 0;
         }
 
         public override string ToString()
