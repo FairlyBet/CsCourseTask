@@ -7,7 +7,7 @@ namespace CsCourseTask
     class PatientDataBase
     {
         List<Patient> patients;
-        String password;
+        string password;
 
         public List<Patient> Patients { get => patients; }
 
@@ -22,7 +22,7 @@ namespace CsCourseTask
             patients = new List<Patient>();
         }
 
-        public Boolean AddElement(String fullname, String workType, String recordCardNumber,
+        public bool AddElement(String fullname, String workType, String recordCardNumber,
             UInt32 serviceCost, Boolean isPayed, Int32 numToEdit = -1)
         {
             if (fullname != "" && workType != "" && recordCardNumber != "")
@@ -63,7 +63,7 @@ namespace CsCourseTask
             return searchInf;
         }
 
-        public String DebtSearch()
+        public string DebtSearch()
         {
             String inf = "";
             for (int i = 0; i < patients.Count; i++)
@@ -76,7 +76,7 @@ namespace CsCourseTask
             return inf;
         }
 
-        public String WorkTypeSearch()
+        public string WorkTypeSearch()
         {
             String inf = "", types = "";
             for (int i = 0; i < patients.Count; i++)
@@ -139,7 +139,7 @@ namespace CsCourseTask
             fileStream.Close();
         }
 
-        public static String ReadPass(String path)
+        public static string ReadPass(String path)
         {
             String pass;
             FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
