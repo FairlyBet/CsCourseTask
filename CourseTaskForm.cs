@@ -247,13 +247,10 @@ namespace CsCourseTask
         {
             try
             {
-                if (Int32.Parse(NumToDelTextBox.Text) > 0 && Int32.Parse(NumToDelTextBox.Text) <= dataBase.Patients.Count)
+                if (dataBase.DeleteElement(Int32.Parse(NumToDelTextBox.Text) - 1))
                 {
-                    //dataBase.DeleteElement(Int32.Parse(NumToDelTextBox.Text) - 1);
-                    dataBase.Patients.RemoveAt(Int32.Parse(NumToDelTextBox.Text) - 1);
                     MessageBox.Show("Запись удалена");
-                    patientsTextBox.Text = dataBase.ToString();
-                    NumToDelTextBox.Text = "0";
+                    patientsTextBox.Text = dataBase.ToString();       
                 }
                 else MessageBox.Show("Неверный номер");
             }
@@ -261,6 +258,7 @@ namespace CsCourseTask
             {
                 MessageBox.Show(exc.Message);
             }
+            NumToDelTextBox.Text = "0";
         }
 
         private void RemoveNonDebtorsToolStripMenuItem_Click(object sender, EventArgs e)

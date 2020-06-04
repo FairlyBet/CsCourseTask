@@ -40,10 +40,15 @@ namespace CsCourseTask
             else return false;
         }
 
-        //public void DeleteElement(Int32 number)
-        //{
-        //    patients.RemoveAt(number);
-        //}
+        public bool DeleteElement(Int32 number)
+        {
+            if (number >= 0 && number < patients.Count)
+            { 
+                patients.RemoveAt(number);
+                return true; 
+            }
+            else return false;
+        }
 
         public string Search(String name)
         {
