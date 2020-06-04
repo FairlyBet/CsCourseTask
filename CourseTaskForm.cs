@@ -315,7 +315,9 @@ namespace CsCourseTask
                         NumToEditUpDown.Visible = false;
                         NumToEditUpDown.Enabled = false;
 
-                        patientsTextBox.Text = dataBase.ToString();
+                        if (searchBox.Text == "")
+                            patientsTextBox.Text = dataBase.ToString();
+                        else SearchBox_TextChanged(null, null);
 
                         fullNameTextBox.Text = "";
                         workTypeTextBox.Text = "";
